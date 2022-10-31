@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "vmList": {
+        "value": [
+             "module-vm"
+           ]
+        },
+        "domainJoinUserName": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/XXX_XXX_XXX_XXX_XXX/resourceGroups/My-devops-dev-rg/providers/Microsoft.KeyVault/vaults/devopsdev"
+                },
+                "secretName": "domainJoinUserName"
+            }
+        },
+        "domainJoinUserPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/XXX_XXX_XXX_XXX_XXX/resourceGroups/My-devops-dev-rg/providers/Microsoft.KeyVault/vaults/devopsdev"
+                },
+                "secretName": "domainJoinUserPassword"
+            }
+        },
+        "adminUsername": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/XXX_XXX_XXX_XXX_XXX/resourceGroups/My-devops-dev-rg/providers/Microsoft.KeyVault/vaults/devopsdev"
+                },
+                "secretName": "vmadminUsername"
+            }
+        },
+        "adminPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/XXX_XXX_XXX_XXX_XXX/resourceGroups/My-devops-dev-rg/providers/Microsoft.KeyVault/vaults/devopsdev"
+                },
+                "secretName": "vmAdminPassword"
+            }
+        },
+        "vNet": {
+            "value": "/subscriptions/XXX_XXX_XXX_XXX_XXX/resourceGroups/My-devops-dev-rg/providers/Microsoft.Network/virtualNetworks/My-devops-dev-vnet/subnets/default"
+        }
+    }
+}

@@ -1,0 +1,2 @@
+Publish to container registry
+az bicep publish --file vm.bicep --target br:myacr.azurecr.io/bicepmodules/virtualmachine:v1
